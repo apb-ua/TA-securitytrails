@@ -1,9 +1,7 @@
 <!--
 Placeholder for debugging
 <form script="simple_xml_examples:showtokens.js">
--->
-<form>
-
+--><form>
   <init>
     <unset token="searching_domains_tok"></unset>
     <unset token="list_subdomains_tok"></unset>
@@ -32,224 +30,227 @@ Placeholder for debugging
   <fieldset submitButton="true" autoRun="false">
     <input type="dropdown" token="api_type">
       <label>API</label>
-      <choice value="searching_domains">Searching Domains</choice>
-      <choice value="list_subdomains">List Subdomains</choice>
-      <choice value="list_tags">List Tags</choice>
-      <choice value="get_associated">Get Associated Domain</choice>
-      <choice value="get_whois">Get Whois</choice>
-      <choice value="history_dns">History DNS</choice>
-      <choice value="history_whois">History Whois</choice>
-      <choice value="get_domain">Get Domain</choice>
-      <choice value="ip_range_checker">IP Checker</choice>
+      <choice value="get_domain">(Domains) Details</choice>
+      <choice value="list_subdomains">(Domains) Subdomains</choice>
+      <choice value="list_tags">(Domains) Tags</choice>
+      <choice value="get_whois">(Domains) WHOIS</choice>
+      <choice value="searching_domains">(Domains) Search</choice>
+      <choice value="get_associated">(Domains) Associated</choice>
+      <choice value="history_dns">(History) DNS</choice>
+      <choice value="history_whois">(History) WHOIS</choice>
+      <choice value="ip_range_checker">(IPs) Neighbors </choice>
       <change>
         <condition value="searching_domains">
           <set token="searching_domains_tok">true</set>
-             <!-- Unset Tokens -->
-                 <unset token="list_subdomains_tok"></unset>
-    <unset token="list_tags_tok"></unset>
-    <unset token="get_associated_tok"></unset>
-    <unset token="get_whois_tok"></unset>
-    <unset token="history_dns_tok"></unset>
-    <unset token="history_whois_tok"></unset>
-    <unset token="get_domain_tok"></unset>
-    <unset token="ip_range_checker_tok"></unset>
-    <unset token="list_subdomains_domain"></unset>
-    <unset token="search_description"></unset>
-    <unset token="domain_associated"></unset>
-    <unset token="domain_tag"></unset>
-    <unset token="domain_whois"></unset>
-    <unset token="domain_history_domain"></unset>
-    <unset token="domain_history_record_type"></unset>
-    <unset token="whois_history_domain"></unset>
-    <unset token="get_domain_domain"></unset>
-    <unset token="ip_range"></unset>
-
+          <!-- Unset Tokens -->
+          <unset token="list_subdomains_tok"></unset>
+          <unset token="list_tags_tok"></unset>
+          <unset token="get_associated_tok"></unset>
+          <unset token="get_whois_tok"></unset>
+          <unset token="history_dns_tok"></unset>
+          <unset token="history_whois_tok"></unset>
+          <unset token="get_domain_tok"></unset>
+          <unset token="ip_range_checker_tok"></unset>
+          <unset token="list_subdomains_domain"></unset>
+          <unset token="search_description"></unset>
+          <unset token="domain_associated"></unset>
+          <unset token="domain_tag"></unset>
+          <unset token="domain_whois"></unset>
+          <unset token="domain_history_domain"></unset>
+          <unset token="domain_history_record_type"></unset>
+          <unset token="whois_history_domain"></unset>
+          <unset token="get_domain_domain"></unset>
+          <unset token="ip_range"></unset>
         </condition>
         <condition value="list_subdomains">
           <!-- Unset Tokens -->
           <set token="list_subdomains_tok">true</set>
-    <unset token="searching_domains_tok"></unset>
-    <unset token="list_tags_tok"></unset>
-    <unset token="get_associated_tok"></unset>
-    <unset token="get_whois_tok"></unset>
-    <unset token="history_dns_tok"></unset>
-    <unset token="history_whois_tok"></unset>
-    <unset token="get_domain_tok"></unset>
-    <unset token="ip_range_checker_tok"></unset>
-    <unset token="value_search"></unset>
-    <unset token="search_description"></unset>
-    <unset token="domain_searcher_value"></unset>
-    <unset token="keyword_search"></unset>
-    <unset token="domain_associated"></unset>
-    <unset token="domain_tag"></unset>
-    <unset token="domain_whois"></unset>
-    <unset token="domain_history_domain"></unset>
-    <unset token="domain_history_record_type"></unset>
-    <unset token="whois_history_domain"></unset>
-    <unset token="get_domain_domain"></unset>
-    <unset token="ip_range"></unset>
+          <unset token="searching_domains_tok"></unset>
+          <unset token="list_tags_tok"></unset>
+          <unset token="get_associated_tok"></unset>
+          <unset token="get_whois_tok"></unset>
+          <unset token="history_dns_tok"></unset>
+          <unset token="history_whois_tok"></unset>
+          <unset token="get_domain_tok"></unset>
+          <unset token="ip_range_checker_tok"></unset>
+          <unset token="value_search"></unset>
+          <unset token="search_description"></unset>
+          <unset token="domain_searcher_value"></unset>
+          <unset token="keyword_search"></unset>
+          <unset token="domain_associated"></unset>
+          <unset token="domain_tag"></unset>
+          <unset token="domain_whois"></unset>
+          <unset token="domain_history_domain"></unset>
+          <unset token="domain_history_record_type"></unset>
+          <unset token="whois_history_domain"></unset>
+          <unset token="get_domain_domain"></unset>
+          <unset token="ip_range"></unset>
         </condition>
         <condition value="list_tags">
           <set token="list_tags_tok">true</set>
-              <unset token="searching_domains_tok"></unset>
-    <unset token="list_subdomains_tok"></unset>
-    <unset token="get_associated_tok"></unset>
-    <unset token="get_whois_tok"></unset>
-    <unset token="history_dns_tok"></unset>
-    <unset token="history_whois_tok"></unset>
-    <unset token="get_domain_tok"></unset>
-    <unset token="ip_range_checker_tok"></unset>
-    <unset token="value_search"></unset>
-    <unset token="list_subdomains_domain"></unset>
-    <unset token="search_description"></unset>
-    <unset token="domain_searcher_value"></unset>
-    <unset token="keyword_search"></unset>
-    <unset token="domain_associated"></unset>
-    <unset token="domain_whois"></unset>
-    <unset token="domain_history_domain"></unset>
-    <unset token="domain_history_record_type"></unset>
-    <unset token="whois_history_domain"></unset>
-    <unset token="get_domain_domain"></unset>
-    <unset token="ip_range"></unset>
-
+          <unset token="searching_domains_tok"></unset>
+          <unset token="list_subdomains_tok"></unset>
+          <unset token="get_associated_tok"></unset>
+          <unset token="get_whois_tok"></unset>
+          <unset token="history_dns_tok"></unset>
+          <unset token="history_whois_tok"></unset>
+          <unset token="get_domain_tok"></unset>
+          <unset token="ip_range_checker_tok"></unset>
+          <unset token="value_search"></unset>
+          <unset token="list_subdomains_domain"></unset>
+          <unset token="search_description"></unset>
+          <unset token="domain_searcher_value"></unset>
+          <unset token="keyword_search"></unset>
+          <unset token="domain_associated"></unset>
+          <unset token="domain_whois"></unset>
+          <unset token="domain_history_domain"></unset>
+          <unset token="domain_history_record_type"></unset>
+          <unset token="whois_history_domain"></unset>
+          <unset token="get_domain_domain"></unset>
+          <unset token="ip_range"></unset>
         </condition>
         <condition value="get_associated">
           <set token="get_associated_tok">true</set>
-              <unset token="searching_domains_tok"></unset>
-    <unset token="list_subdomains_tok"></unset>
-    <unset token="list_tags_tok"></unset>
-    <unset token="get_whois_tok"></unset>
-    <unset token="history_dns_tok"></unset>
-    <unset token="history_whois_tok"></unset>
-    <unset token="get_domain_tok"></unset>
-    <unset token="ip_range_checker_tok"></unset>
-    <unset token="value_search"></unset>
-    <unset token="list_subdomains_domain"></unset>
-    <unset token="search_description"></unset>
-    <unset token="domain_searcher_value"></unset>
-    <unset token="keyword_search"></unset>
-    <unset token="domain_tag"></unset>
-    <unset token="domain_whois"></unset>
-    <unset token="domain_history_domain"></unset>
-    <unset token="domain_history_record_type"></unset>
-    <unset token="whois_history_domain"></unset>
-    <unset token="get_domain_domain"></unset>
-    <unset token="ip_range"></unset>
+          <unset token="searching_domains_tok"></unset>
+          <unset token="list_subdomains_tok"></unset>
+          <unset token="list_tags_tok"></unset>
+          <unset token="get_whois_tok"></unset>
+          <unset token="history_dns_tok"></unset>
+          <unset token="history_whois_tok"></unset>
+          <unset token="get_domain_tok"></unset>
+          <unset token="ip_range_checker_tok"></unset>
+          <unset token="value_search"></unset>
+          <unset token="list_subdomains_domain"></unset>
+          <unset token="search_description"></unset>
+          <unset token="domain_searcher_value"></unset>
+          <unset token="keyword_search"></unset>
+          <unset token="domain_tag"></unset>
+          <unset token="domain_whois"></unset>
+          <unset token="domain_history_domain"></unset>
+          <unset token="domain_history_record_type"></unset>
+          <unset token="whois_history_domain"></unset>
+          <unset token="get_domain_domain"></unset>
+          <unset token="ip_range"></unset>
         </condition>
         <condition value="get_whois">
           <set token="get_whois_tok">true</set>
-              <unset token="searching_domains_tok"></unset>
-    <unset token="list_subdomains_tok"></unset>
-    <unset token="list_tags_tok"></unset>
-    <unset token="get_associated_tok"></unset>
-    <unset token="history_dns_tok"></unset>
-    <unset token="history_whois_tok"></unset>
-    <unset token="get_domain_tok"></unset>
-    <unset token="ip_range_checker_tok"></unset>
-    <unset token="value_search"></unset>
-    <unset token="list_subdomains_domain"></unset>
-    <unset token="search_description"></unset>
-    <unset token="domain_searcher_value"></unset>
-    <unset token="keyword_search"></unset>
-    <unset token="domain_associated"></unset>
-    <unset token="domain_tag"></unset>
-    <unset token="domain_history_domain"></unset>
-    <unset token="domain_history_record_type"></unset>
-    <unset token="whois_history_domain"></unset>
-    <unset token="get_domain_domain"></unset>
-    <unset token="ip_range"></unset>
+          <unset token="searching_domains_tok"></unset>
+          <unset token="list_subdomains_tok"></unset>
+          <unset token="list_tags_tok"></unset>
+          <unset token="get_associated_tok"></unset>
+          <unset token="history_dns_tok"></unset>
+          <unset token="history_whois_tok"></unset>
+          <unset token="get_domain_tok"></unset>
+          <unset token="ip_range_checker_tok"></unset>
+          <unset token="value_search"></unset>
+          <unset token="list_subdomains_domain"></unset>
+          <unset token="search_description"></unset>
+          <unset token="domain_searcher_value"></unset>
+          <unset token="keyword_search"></unset>
+          <unset token="domain_associated"></unset>
+          <unset token="domain_tag"></unset>
+          <unset token="domain_history_domain"></unset>
+          <unset token="domain_history_record_type"></unset>
+          <unset token="whois_history_domain"></unset>
+          <unset token="get_domain_domain"></unset>
+          <unset token="ip_range"></unset>
         </condition>
         <condition value="history_dns">
           <set token="history_dns_tok">true</set>
-              <unset token="searching_domains_tok"></unset>
-    <unset token="list_subdomains_tok"></unset>
-    <unset token="list_tags_tok"></unset>
-    <unset token="get_associated_tok"></unset>
-    <unset token="get_whois_tok"></unset>
-    <unset token="history_whois_tok"></unset>
-    <unset token="get_domain_tok"></unset>
-    <unset token="ip_range_checker_tok"></unset>
-    <unset token="value_search"></unset>
-    <unset token="list_subdomains_domain"></unset>
-    <unset token="search_description"></unset>
-    <unset token="domain_searcher_value"></unset>
-    <unset token="keyword_search"></unset>
-    <unset token="domain_associated"></unset>
-    <unset token="domain_tag"></unset>
-    <unset token="domain_whois"></unset>
-    <unset token="whois_history_domain"></unset>
-    <unset token="get_domain_domain"></unset>
-    <unset token="ip_range"></unset>
+          <unset token="searching_domains_tok"></unset>
+          <unset token="list_subdomains_tok"></unset>
+          <unset token="list_tags_tok"></unset>
+          <unset token="get_associated_tok"></unset>
+          <unset token="get_whois_tok"></unset>
+          <unset token="history_whois_tok"></unset>
+          <unset token="get_domain_tok"></unset>
+          <unset token="ip_range_checker_tok"></unset>
+          <unset token="value_search"></unset>
+          <unset token="list_subdomains_domain"></unset>
+          <unset token="search_description"></unset>
+          <unset token="domain_searcher_value"></unset>
+          <unset token="keyword_search"></unset>
+          <unset token="domain_associated"></unset>
+          <unset token="domain_tag"></unset>
+          <unset token="domain_whois"></unset>
+          <unset token="whois_history_domain"></unset>
+          <unset token="get_domain_domain"></unset>
+          <unset token="ip_range"></unset>
         </condition>
         <condition value="history_whois">
           <set token="history_whois_tok">true</set>
-              <unset token="searching_domains_tok"></unset>
-    <unset token="list_subdomains_tok"></unset>
-    <unset token="list_tags_tok"></unset>
-    <unset token="get_associated_tok"></unset>
-    <unset token="get_whois_tok"></unset>
-    <unset token="history_dns_tok"></unset>
-    <unset token="get_domain_tok"></unset>
-    <unset token="ip_range_checker_tok"></unset>
-    <unset token="value_search"></unset>
-    <unset token="list_subdomains_domain"></unset>
-    <unset token="search_description"></unset>
-    <unset token="domain_searcher_value"></unset>
-    <unset token="keyword_search"></unset>
-    <unset token="domain_associated"></unset>
-    <unset token="domain_tag"></unset>
-    <unset token="domain_whois"></unset>
-    <unset token="domain_history_domain"></unset>
-    <unset token="domain_history_record_type"></unset>
-    <unset token="get_domain_domain"></unset>
-    <unset token="ip_range"></unset>
+          <unset token="searching_domains_tok"></unset>
+          <unset token="list_subdomains_tok"></unset>
+          <unset token="list_tags_tok"></unset>
+          <unset token="get_associated_tok"></unset>
+          <unset token="get_whois_tok"></unset>
+          <unset token="history_dns_tok"></unset>
+          <unset token="get_domain_tok"></unset>
+          <unset token="ip_range_checker_tok"></unset>
+          <unset token="value_search"></unset>
+          <unset token="list_subdomains_domain"></unset>
+          <unset token="search_description"></unset>
+          <unset token="domain_searcher_value"></unset>
+          <unset token="keyword_search"></unset>
+          <unset token="domain_associated"></unset>
+          <unset token="domain_tag"></unset>
+          <unset token="domain_whois"></unset>
+          <unset token="domain_history_domain"></unset>
+          <unset token="domain_history_record_type"></unset>
+          <unset token="get_domain_domain"></unset>
+          <unset token="ip_range"></unset>
         </condition>
         <condition value="get_domain">
           <set token="get_domain_tok">true</set>
-              <unset token="searching_domains_tok"></unset>
-    <unset token="list_subdomains_tok"></unset>
-    <unset token="list_tags_tok"></unset>
-    <unset token="get_associated_tok"></unset>
-    <unset token="get_whois_tok"></unset>
-    <unset token="history_dns_tok"></unset>
-    <unset token="history_whois_tok"></unset>
-    <unset token="ip_range_checker_tok"></unset>
-    <unset token="value_search"></unset>
-    <unset token="list_subdomains_domain"></unset>
-    <unset token="search_description"></unset>
-    <unset token="domain_searcher_value"></unset>
-    <unset token="keyword_search"></unset>
-    <unset token="domain_associated"></unset>
-    <unset token="domain_tag"></unset>
-    <unset token="domain_whois"></unset>
-    <unset token="domain_history_domain"></unset>
-    <unset token="domain_history_record_type"></unset>
-    <unset token="ip_range"></unset>
+          <unset token="searching_domains_tok"></unset>
+          <unset token="list_subdomains_tok"></unset>
+          <unset token="list_tags_tok"></unset>
+          <unset token="get_associated_tok"></unset>
+          <unset token="get_whois_tok"></unset>
+          <unset token="history_dns_tok"></unset>
+          <unset token="history_whois_tok"></unset>
+          <unset token="ip_range_checker_tok"></unset>
+          <unset token="value_search"></unset>
+          <unset token="list_subdomains_domain"></unset>
+          <unset token="search_description"></unset>
+          <unset token="domain_searcher_value"></unset>
+          <unset token="keyword_search"></unset>
+          <unset token="domain_associated"></unset>
+          <unset token="domain_tag"></unset>
+          <unset token="domain_whois"></unset>
+          <unset token="domain_history_domain"></unset>
+          <unset token="domain_history_record_type"></unset>
+          <unset token="ip_range"></unset>
         </condition>
         <condition value="ip_range_checker">
           <set token="ip_range_checker_tok">true</set>
-              <unset token="searching_domains_tok"></unset>
-    <unset token="list_subdomains_tok"></unset>
-    <unset token="list_tags_tok"></unset>
-    <unset token="get_associated_tok"></unset>
-    <unset token="get_whois_tok"></unset>
-    <unset token="history_dns_tok"></unset>
-    <unset token="history_whois_tok"></unset>
-    <unset token="get_domain_tok"></unset>
-    <unset token="value_search"></unset>
-    <unset token="list_subdomains_domain"></unset>
-    <unset token="search_description"></unset>
-    <unset token="domain_searcher_value"></unset>
-    <unset token="keyword_search"></unset>
-    <unset token="domain_associated"></unset>
-    <unset token="domain_tag"></unset>
-    <unset token="domain_whois"></unset>
-    <unset token="domain_history_domain"></unset>
-    <unset token="domain_history_record_type"></unset>
-    <unset token="whois_history_domain"></unset>
-    <unset token="get_domain_domain"></unset>
+          <unset token="searching_domains_tok"></unset>
+          <unset token="list_subdomains_tok"></unset>
+          <unset token="list_tags_tok"></unset>
+          <unset token="get_associated_tok"></unset>
+          <unset token="get_whois_tok"></unset>
+          <unset token="history_dns_tok"></unset>
+          <unset token="history_whois_tok"></unset>
+          <unset token="get_domain_tok"></unset>
+          <unset token="value_search"></unset>
+          <unset token="list_subdomains_domain"></unset>
+          <unset token="search_description"></unset>
+          <unset token="domain_searcher_value"></unset>
+          <unset token="keyword_search"></unset>
+          <unset token="domain_associated"></unset>
+          <unset token="domain_tag"></unset>
+          <unset token="domain_whois"></unset>
+          <unset token="domain_history_domain"></unset>
+          <unset token="domain_history_record_type"></unset>
+          <unset token="whois_history_domain"></unset>
+          <unset token="get_domain_domain"></unset>
         </condition>
       </change>
+    </input>
+    <input type="text" token="search_description" searchWhenChanged="false">
+      <label>Search Description</label>
+      <prefix>param.search_description="</prefix>
+      <suffix>"</suffix>
     </input>
     <input depends="$searching_domains_tok$" type="text" token="value_search">
       <label>Domain Searcher - Value Search</label>
@@ -287,11 +288,6 @@ Placeholder for debugging
     <input depends="$list_subdomains_tok$" type="text" token="list_subdomains_domain" searchWhenChanged="true">
       <label>Subdomains Searcher - Domain</label>
       <prefix>param.domain="</prefix>
-      <suffix>"</suffix>
-    </input>
-    <input type="text" token="search_description" searchWhenChanged="false">
-      <label>Search Description</label>
-      <prefix>param.search_description="</prefix>
       <suffix>"</suffix>
     </input>
     <input depends="$list_tags_tok$" type="text" token="domain_tag">
@@ -342,15 +338,17 @@ Placeholder for debugging
     </input>
   </fieldset>
   <row>
-  <html>
+    <panel>
+      <html>
       <b>How To:</b>
-      <li>Select the API from the dropdown menu under API.  </li>
+      <li>Select the API from the dropdown menu under API. You can find API endpoint description at <a href="https://docs.securitytrails.com/reference" target="_blank">https://docs.securitytrails.com/reference</a></li>
       <li>Fill out the necessary fields as described</li>
       <li>Enter a search description (Something like an incident ID or ticket ID can help you track this request)</li>
       <li>Press Submit</li>
       <li>You will notice two panels.  One issues the search command, the other has the search results.  Once the search is complete reload the bottom panel by clicking the refresh icon (hover over the panel in the bottom left)</li>
     </html>
-    </row>
+    </panel>
+  </row>
   <row>
     <panel depends="$list_tags_tok$">
       <event>
@@ -485,7 +483,7 @@ Placeholder for debugging
       <event>
         <title>Search Results</title>
         <search>
-          <query>`securitytrails_index` sourcetype="securitytrails:json"</query>
+          <query>sourcetype="securitytrails:json" index="stindex"</query>
           <earliest>-15m</earliest>
           <latest>now</latest>
           <refresh>30s</refresh>
