@@ -1,0 +1,3 @@
+*.pyc
+local/ta_securitytrails_settings.conf
+metadata/local.meta
