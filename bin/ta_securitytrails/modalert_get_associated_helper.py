@@ -19,44 +19,54 @@ def process_event(helper, *args, **kwargs):
     #Get Local Parameters
     domain = helper.get_param("domain")
     search_description = helper.get_param("search_description")
-    record_type = helper.get_param("record_type")
+#    record_type = helper.get_param("record_type")
     
     #Create the URI String that looks for the domain
-    url = 'https://api.securitytrails.com/v1/domain/{}/associated?api_key={}&page=1'.format(domain,api_key)
+    url = 'https://api.securitytrails.com/v1/domain/{}/associated'.format(domain)
     
     method = "GET"
     
     #Create Header Values
     headers = {
-    'User-Agent' : 'Splunk Adaptive Response',
+#    'User-Agent' : 'Splunk Adaptive Response',
     'APIKEY': '{}'.format(api_key)
     
     }
     
+    querystring = {"page":"1"}
+
     #Make HTTP Request
-    response = helper.send_http_request(url, method, parameters=None, payload=None, headers=headers, cookies=None, verify=True, cert=None, timeout=10, use_proxy=use_proxy)
+    response = helper.send_http_request(url, method, parameters=querystring, payload=None, headers=headers, cookies=None, verify=True, cert=None, timeout=10, use_proxy=use_proxy)
 
     if response.status_code == 200:
+	helper.log_info("Received initial 200 OK from security trails for domain {}. Get Associated endpoint".format(domain))
         # JSON Response
         json_resp = response.json()
         
         # Format output
         outputArray = []
+
+	for a in json_resp['records']:
+                    outputArray.append(a)
+
         i = 1
         # While i is less than the total pages
-        while i <= json_resp['pages']:
-            # For eachr record in the response
-            for a in json_resp['records']:
-                    outputArray.append(a)
+        while i < json_resp['meta']['total_pages']:
             i += 1
             # Create a new request to the api endpoint
-            url = 'https://api.securitytrails.com/v1/domain/{}/associated?api_key={}&page={}'.format(domain,api_key,i)
-            
+            url = 'https://api.securitytrails.com/v1/domain/{}/associated'.format(domain)
+            querystring = {"page":i}
+
             # Make connection to endpoint
-            response = helper.send_http_request(url, method, parameters=None, payload=None, headers=headers, cookies=None, verify=True, cert=None, timeout=10, use_proxy=use_proxy)
+            response = helper.send_http_request(url, method, parameters=querystring, payload=None, headers=headers, cookies=None, verify=True, cert=None, timeout=10, use_proxy=use_proxy)
+
+	    json_resp = response.json()
+	    # For eachr record in the response
+            for a in json_resp['records']:
+                    outputArray.append(a)
 
         #Log successfull request
-        helper.log_info("Received 200 OK from security trails for domain {}. Get Associated endpoint".format(domain))
+        helper.log_info("Received final 200 OK from security trails for domain {}. Get Associated endpoint".format(domain))
         
         #Add note information to JSON output
         json_load = {}
