@@ -36,9 +36,9 @@ class AlertActionWorkersearching_domains(ModularAlertBase):
             self.log_error('keyword_search is a mandatory parameter, but its value is None.')
             return False
 
-        if not self.get_param("search_description"):
-            self.log_error('search_description is a mandatory parameter, but its value is None.')
-            return False
+        #if not self.get_param("search_description"):
+            #self.log_error('search_description is a mandatory parameter, but its value is None.')
+            #return False
         return True
 
     def process_event(self, *args, **kwargs):
